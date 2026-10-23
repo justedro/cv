@@ -4,8 +4,10 @@ Source for [eduard.vlasov.nl](https://eduard.vlasov.nl/) and the one-page PDF re
 
 | Path | What it is |
 | --- | --- |
-| `resume/eduard-vlasov.tex` | The resume, single source for the PDF |
+| `resume/eduard-vlasov.tex` | General one-page resume |
 | `eduard-vlasov.pdf` | Built PDF, served by the site at `/eduard-vlasov.pdf` |
+| `resume/eduard-vlasov-ai.tex` | AI-native one-page variant (shorter summary and earlier roles, two extra Staff bullets) |
+| `eduard-vlasov-ai.pdf` | Built AI-native PDF, not linked from the site |
 | `index.html`, `assets/` | The site, plain HTML, CSS, and JS with no build step |
 | `scripts/build-pdf.sh` | Builds the PDF and checks it is exactly one page |
 | `.github/workflows/jekyll-gh-pages.yml` | Builds the PDF and deploys the site to GitHub Pages |
@@ -18,12 +20,12 @@ Requires Docker. The script runs `pdflatex` inside the `blang/latex` image, the 
 ./scripts/build-pdf.sh
 ```
 
-It compiles twice, fails if the result is not exactly one page, warns on overfull boxes, and copies the PDF to `./eduard-vlasov.pdf`. On a LaTeX error it prints the end of `resume/build.log`.
+With no arguments it builds both resumes. Pass a basename to build one: `./scripts/build-pdf.sh eduard-vlasov-ai`. Each compile runs twice, fails if the result is not exactly one page, warns on overfull boxes, and copies the PDF to the repo root. On a LaTeX error it prints the end of `resume/build.log`.
 
 To also render a PNG of the page for a quick visual check:
 
 ```sh
-PREVIEW=1 ./scripts/build-pdf.sh   # writes resume/preview.png
+PREVIEW=1 ./scripts/build-pdf.sh eduard-vlasov-ai   # writes resume/eduard-vlasov-ai-preview.png
 ```
 
 ## Check what an ATS sees

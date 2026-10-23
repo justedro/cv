@@ -5,15 +5,17 @@ Personal resume repo: a one-page LaTeX PDF and a static site at eduard.vlasov.nl
 ## Commands
 
 - Build the PDF: `./scripts/build-pdf.sh` (Docker, `blang/latex` image). Exits non-zero if the PDF is not exactly one page.
-- Visual check: `PREVIEW=1 ./scripts/build-pdf.sh`, then read `resume/preview.png`. Delete it afterwards.
+- Visual check: `PREVIEW=1 ./scripts/build-pdf.sh eduard-vlasov-ai`, then read `resume/eduard-vlasov-ai-preview.png`. Delete it afterwards. The same works for `eduard-vlasov`.
 - Text layer check: `docker run --rm -v "$PWD":/data --entrypoint gs blang/latex -q -sDEVICE=txtwrite -o - eduard-vlasov.pdf`. It shows curly apostrophes as `Š`; that is a Ghostscript quirk, not a PDF problem.
 - Site preview: `python3 -m http.server 8765` from the repo root.
 
-Always rebuild and commit `eduard-vlasov.pdf` after editing the `.tex`, since the local site serves that copy.
+Always rebuild and commit `eduard-vlasov.pdf` after editing `resume/eduard-vlasov.tex`, since the local site serves that copy. Rebuild and commit `eduard-vlasov-ai.pdf` after editing `resume/eduard-vlasov-ai.tex`. The AI-native PDF is not linked from the site.
 
-## Keep the PDF and the site in sync
+## Keep the public resume in sync
 
-`resume/eduard-vlasov.tex` and `index.html` hold the same text. Any change to the summary, a bullet, a title, a date, or a skill goes into both files in the same change. The site may wrap lines differently but the wording must match.
+`resume/eduard-vlasov.tex` and `index.html` hold the same text, except the site also carries two Staff bullets that exist only on the site and in the AI-native PDF: self-hosted LLM evaluation and the knowledge aggregation system. Any other change to the summary, a bullet, a title, a date, or a skill goes into `resume/eduard-vlasov.tex` and `index.html` in the same change. The site may wrap lines differently but the wording must match.
+
+`resume/eduard-vlasov-ai.tex` is a separate one-page variant for AI-native companies. It uses a shorter summary, drops the storage-cost bullet, merges the early Miro bullets, and replaces the Data skills line with Data & AI. Those cuts stay in that file only. The two Staff bullets above must keep the same wording in `index.html` and `resume/eduard-vlasov-ai.tex`.
 
 ## Resume rules
 

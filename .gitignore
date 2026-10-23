@@ -7,4 +7,5 @@ resume/*.fls
 resume/*.fdb_latexmk
 resume/*.pdf
 resume/preview.png
+resume/*-preview.png
 public/
