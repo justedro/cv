@@ -31,6 +31,7 @@ jobs:
           cp -r assets public/assets
           cp CNAME public/CNAME
           cp eduard-vlasov.pdf public/eduard-vlasov.pdf
+          cp eduard-vlasov-ai.pdf public/eduard-vlasov-ai.pdf
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

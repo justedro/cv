@@ -9,7 +9,7 @@ Personal resume repo: a one-page LaTeX PDF and a static site at eduard.vlasov.nl
 - Text layer check: `docker run --rm -v "$PWD":/data --entrypoint gs blang/latex -q -sDEVICE=txtwrite -o - eduard-vlasov.pdf`. It shows curly apostrophes as `Š`; that is a Ghostscript quirk, not a PDF problem.
 - Site preview: `python3 -m http.server 8765` from the repo root.
 
-Always rebuild and commit `eduard-vlasov.pdf` after editing `resume/eduard-vlasov.tex`, since the local site serves that copy. Rebuild and commit `eduard-vlasov-ai.pdf` after editing `resume/eduard-vlasov-ai.tex`. The AI-native PDF is not linked from the site.
+Always rebuild and commit `eduard-vlasov.pdf` after editing `resume/eduard-vlasov.tex`, since the local site serves that copy. Rebuild and commit `eduard-vlasov-ai.pdf` after editing `resume/eduard-vlasov-ai.tex`. The site links it as AI PDF.
 
 ## Keep the public resume in sync
 

@@ -7,7 +7,7 @@ Source for [eduard.vlasov.nl](https://eduard.vlasov.nl/) and the one-page PDF re
 | `resume/eduard-vlasov.tex` | General one-page resume |
 | `eduard-vlasov.pdf` | Built PDF, served by the site at `/eduard-vlasov.pdf` |
 | `resume/eduard-vlasov-ai.tex` | AI-native one-page variant (shorter summary and earlier roles, two extra Staff bullets) |
-| `eduard-vlasov-ai.pdf` | Built AI-native PDF, not linked from the site |
+| `eduard-vlasov-ai.pdf` | Built AI-native PDF, served at `/eduard-vlasov-ai.pdf` and linked as AI PDF |
 | `index.html`, `assets/` | The site, plain HTML, CSS, and JS with no build step |
 | `scripts/build-pdf.sh` | Builds the PDF and checks it is exactly one page |
 | `.github/workflows/jekyll-gh-pages.yml` | Builds the PDF and deploys the site to GitHub Pages |
